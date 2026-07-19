@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate PNG Icons</title>
+  <style>body { font-family: sans-serif; padding: 40px; background: #f0f0f0; } .icon-box { margin-bottom: 20px; background: #fff; padding: 20px; display: inline-block; border-radius: 8px; border: 1px solid #ccc; margin-right: 20px; }</style>
+</head>
+<body>
+  <h2>Your Icons are Ready!</h2>
+  <p style="color: red; font-weight: bold;">Right-click each image below and select "Save image as..."</p>
+  <p>Save them as exactly: <strong>icon128.png</strong>, <strong>icon48.png</strong>, and <strong>icon16.png</strong> into your <code>icons/</code> folder!</p>
+  
+  <div id="output"></div>
+  
+  <script>
+    const svgStr = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <rect width="128" height="128" rx="24" fill="#3b82f6"/>
+  <path d="M30 90 L55 45 L75 70 L100 30" stroke="#ffffff" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="100" cy="30" r="10" fill="#ffffff"/>
+  <path d="M20 100 L108 100" stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+</svg>`;
+    
+    function renderIcon(size) {
+      const box = document.createElement('div');
+      box.className = 'icon-box';
+      box.innerHTML = `<h3>icon${size}.png</h3>`;
+      
+      const canvas = document.createElement('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      const svg = new Blob([svgStr], {type: 'image/svg+xml;charset=utf-8'});
+      const url = URL.createObjectURL(svg);
+      
+      img.onload = () => {
+        ctx.drawImage(img, 0, 0, size, size);
+        box.appendChild(canvas);
+        document.getElementById('output').appendChild(box);
+        URL.revokeObjectURL(url);
+      };
+      img.src = url;
+    }
+
+    renderIcon(128);
+    renderIcon(48);
+    renderIcon(32);
+    renderIcon(16);
+  </script>
+</body>
+</html>

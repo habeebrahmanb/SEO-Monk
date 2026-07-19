@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Monk</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="logo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        <span>SEO Monk</span>
+      </div>
+      <nav class="nav-menu">
+        <button class="nav-item active" data-target="dashboard">
+          <svg class="icon"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> Dashboard
+        </button>
+        <button class="nav-item" data-target="seo">
+          <svg class="icon"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg> SEO
+        </button>
+        <button class="nav-item" data-target="images">
+          <svg class="icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg> Images
+        </button>
+        <button class="nav-item" data-target="links">
+          <svg class="icon"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> Links
+        </button>
+        <button class="nav-item" data-target="keywords">
+          <svg class="icon"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg> Keywords
+        </button>
+        <button class="nav-item" data-target="tech">
+          <svg class="icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Technology
+        </button>
+        <button class="nav-item" data-target="redirects">
+          <svg class="icon"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg> Redirect
+        </button>
+        <button class="nav-item" data-target="index">
+          <svg class="icon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg> Index
+        </button>
+        <button class="nav-item" data-target="llm">
+          <svg class="icon"><path d="M2 12a10 10 0 1 0 20 0 10 10 0 1 0-20 0z"></path><path d="M12 2v20"></path><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg> AI / LLM
+        </button>
+        <button class="nav-item" data-target="pagespeed">
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> PageSpeed
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <button class="nav-item" data-target="export">
+          <svg class="icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg> Export
+        </button>
+        <button class="nav-item" data-target="settings">
+          <svg class="icon"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> Settings
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="header">
+        <div class="header-info">
+          <img id="header-favicon" src="icons/icon16.png" alt="favicon">
+          <div class="header-titles">
+            <h1 id="header-title">Analyzing...</h1>
+            <p id="header-url">https://...</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+            <svg class="icon moon-icon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button id="re-audit-btn" class="btn btn-primary">
+            <svg class="icon"><polyline points="1 4 1 10 7 10"></polyline><polyline points="23 20 23 14 17 14"></polyline><path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"></path></svg> Re-Audit
+          </button>
+        </div>
+      </header>
+      
+      <div id="loading-overlay" class="loading-overlay">
+        <div class="spinner"></div>
+        <p>Running Professional SEO Audit...</p>
+        <div class="progress-bar-container"><div class="progress-bar" id="audit-progress"></div></div>
+      </div>
+
+      <div class="content-wrapper">
+        <!-- Dashboard View -->
+        <section id="dashboard" class="view active">
+          <div class="score-card card">
+            <div class="score-circle">
+              <svg viewBox="0 0 36 36" class="circular-chart">
+                <path class="circle-bg"
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <path class="circle" id="score-circle-path"
+                  stroke-dasharray="0, 100"
+                  d="M18 2.0845
+                    a 15.9155 15.9155 0 0 1 0 31.831
+                    a 15.9155 15.9155 0 0 1 0 -31.831"
+                />
+                <text x="18" y="20.35" class="percentage" id="overall-score">0</text>
+              </svg>
+            </div>
+            <div class="score-details">
+              <h2>SEO Score</h2>
+              <p id="score-label" class="badge">Analyzing</p>
+              <p class="text-sm">Health Status: <strong id="health-status">...</strong></p>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-card card">
+              <div class="stat-icon red"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg></div>
+              <div class="stat-info">
+                <h3>Critical Issues</h3>
+                <span id="stat-critical" class="stat-val">0</span>
+              </div>
+            </div>
+            <div class="stat-card card">
+              <div class="stat-icon orange"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+              <div class="stat-info">
+                <h3>Warnings</h3>
+                <span id="stat-warnings" class="stat-val">0</span>
+              </div>
+            </div>
+            <div class="stat-card card">
+              <div class="stat-icon green"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg></div>
+              <div class="stat-info">
+                <h3>Passed Checks</h3>
+                <span id="stat-passed" class="stat-val">0</span>
+              </div>
+            </div>
+            <div class="stat-card card">
+              <div class="stat-icon blue"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+              <div class="stat-info">
+                <h3>Load Time</h3>
+                <span id="stat-load" class="stat-val">0ms</span>
+              </div>
+            </div>
+            <div class="stat-card card">
+              <div class="stat-icon red"><svg viewBox="0 0 24 24"><path d="M2 12h4l2-9 5 18 3-9h4"></path></svg></div>
+              <div class="stat-info">
+                <h3>Total Issues</h3>
+                <span id="stat-total-issues" class="stat-val">0</span>
+              </div>
+            </div>
+            <div class="stat-card card">
+              <div class="stat-icon green"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg></div>
+              <div class="stat-info">
+                <h3>Audit Date</h3>
+                <span id="stat-audit-date" class="stat-val" style="font-size: 14px;">-</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dynamic Views container -->
+        <section id="seo" class="view">
+          <div class="card">
+            <div class="card-header"><h2>SERP Snippet Preview</h2></div>
+            <div class="card-body" style="background:#fff; border-radius:0 0 12px 12px;">
+              <div style="font-family: Arial, sans-serif; max-width: 600px;">
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+                  <img id="serp-favicon" src="icons/icon16.png" style="width:16px; height:16px; border-radius:50%;">
+                  <div>
+                    <div id="serp-domain" style="font-size:14px; color:#202124;">example.com</div>
+                    <div id="serp-url" style="font-size:12px; color:#4d5156; margin-top:-2px;">https://example.com/</div>
+                  </div>
+                </div>
+                <div id="serp-title" style="color:#1a0dab; font-size:20px; font-weight:400; line-height:1.3; margin-bottom:4px; text-decoration:none;">Loading Title...</div>
+                <div id="serp-desc" style="color:#4d5156; font-size:14px; line-height:1.58;">Loading meta description...</div>
+              </div>
+            </div>
+          </div>
+          <div class="card"><div class="card-header"><h2>SEO Analysis</h2></div><div class="card-body" id="seo-results"></div></div>
+        </section>
+        <section id="images" class="view"><div class="card"><div class="card-header"><h2>Image Analysis</h2></div><div class="card-body" id="image-results"></div></div></section>
+        <section id="links" class="view"><div class="card"><div class="card-header"><h2>Link Analysis</h2></div><div class="card-body" id="link-results"></div></div></section>
+        <section id="keywords" class="view"><div class="card"><div class="card-header"><h2>Keyword Analysis</h2></div><div class="card-body" id="keyword-results"></div></div></section>
+        <section id="tech" class="view">
+          <div class="card">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+              <h2>Technology & Performance</h2>
+              <a href="#" id="pagespeed-btn" target="_blank" class="btn btn-outline" style="text-decoration:none; color:inherit; font-size:12px; padding:4px 8px;">Check PageSpeed Insights</a>
+            </div>
+            <div class="card-body" id="tech-results"></div>
+          </div>
+        </section>
+        <section id="redirects" class="view"><div class="card"><div class="card-header"><h2>Redirect Analysis</h2></div><div class="card-body" id="redirect-results"></div></div></section>
+        <section id="index" class="view"><div class="card"><div class="card-header"><h2>Index Analysis</h2></div><div class="card-body" id="index-results"></div></div></section>
+        <section id="llm" class="view"><div class="card"><div class="card-header"><h2>AI / LLM Analysis</h2></div><div class="card-body" id="llm-results"></div></div></section>
+        
+        <section id="pagespeed" class="view">
+          <div class="card">
+            <div class="card-header" style="display:flex; justify-content:space-between; align-items:center;">
+              <h2>PageSpeed Insights</h2>
+              <span id="ps-status" class="badge warning">Running in background...</span>
+            </div>
+            <div class="card-body">
+              <h3 style="font-size: 14px; margin-top: 10px; margin-bottom: 10px; color: var(--text-color);">Mobile</h3>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-label">Performance</div>
+                  <div class="stat-value" id="ps-mobile-performance">--</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Accessibility</div>
+                  <div class="stat-value" id="ps-mobile-accessibility">--</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Best Practices</div>
+                  <div class="stat-value" id="ps-mobile-best-practices">--</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">SEO</div>
+                  <div class="stat-value" id="ps-mobile-seo">--</div>
+                </div>
+              </div>
+              <h3 style="font-size: 14px; margin-top: 20px; margin-bottom: 10px; color: var(--text-color);">Desktop</h3>
+              <div class="stats-grid">
+                <div class="stat-card">
+                  <div class="stat-label">Performance</div>
+                  <div class="stat-value" id="ps-desktop-performance">--</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Accessibility</div>
+                  <div class="stat-value" id="ps-desktop-accessibility">--</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Best Practices</div>
+                  <div class="stat-value" id="ps-desktop-best-practices">--</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">SEO</div>
+                  <div class="stat-value" id="ps-desktop-seo">--</div>
+                </div>
+              </div>
+              <p style="margin-top:20px; font-size:13px; color:var(--text-light); text-align:center;">
+                Powered by Google PageSpeed API.<br>
+                <a href="#" id="ps-external-btn" target="_blank" style="color:var(--primary); text-decoration:none;">View Full Google Report</a>
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        <section id="export" class="view">
+          <div class="card">
+            <div class="card-header"><h2>Export Report</h2></div>
+            <div class="card-body export-actions">
+              <button class="btn btn-outline" id="export-pdf">Export PDF</button>
+              <button class="btn btn-outline" id="export-html">Export HTML</button>
+            </div>
+          </div>
+        </section>
+        
+        <section id="settings" class="view">
+          <div class="card">
+            <div class="card-header"><h2>Settings</h2></div>
+            <div class="card-body">
+              <div class="setting-item">
+                <span>Theme</span>
+                <select id="theme-select" class="input">
+                  <option value="system">Auto</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+              <div class="setting-item" style="display:flex; flex-direction:column; align-items:flex-start; margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px;">
+                <span style="margin-bottom: 5px; font-size: 13px; font-weight: 600;">PageSpeed API Key (Optional)</span>
+                <input type="text" id="pagespeed-api-key" class="input" style="width:100%; box-sizing:border-box;" placeholder="Enter Google API Key">
+                <p style="font-size: 11px; color: var(--text-muted); margin-top: 4px;">Prevents rate-limiting errors when auditing multiple pages.</p>
+              </div>
+              <div class="setting-item" style="display:flex; flex-direction:column; align-items:flex-start; margin-top: 15px; border-top: 1px solid var(--border); padding-top: 15px;">
+                <span style="margin-bottom: 5px; font-size: 13px; font-weight: 600;">Report By (Name)</span>
+                <input type="text" id="report-name" class="input" style="width:100%; box-sizing:border-box;">
+              </div>
+              <div class="setting-item" style="display:flex; flex-direction:column; align-items:flex-start; margin-top: 10px;">
+                <span style="margin-bottom: 5px; font-size: 13px; font-weight: 600;">Report By (Link URL)</span>
+                <input type="text" id="report-link" class="input" style="width:100%; box-sizing:border-box;">
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="margin-top: 24px; border: none; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);">
+            <div class="card-header" style="background: var(--bg-color); border-bottom: 1px solid var(--border-color);">
+              <h2 style="font-size: 15px;">About the Developer</h2>
+            </div>
+            <div class="card-body" style="text-align: center; padding: 32px 24px; background: linear-gradient(to bottom, var(--bg-color), var(--bg-secondary));">
+              
+              <div style="width: 64px; height: 64px; background: linear-gradient(135deg, #3b82f6, #2563eb); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 32px; height: 32px;"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              </div>
+              
+              <h2 style="margin-bottom: 4px; color: var(--text-color); font-size: 20px; font-weight: 700; letter-spacing: -0.5px;">SEO Monk</h2>
+              <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Professional SEO Audit in One Click.</p>
+              
+              <div style="background: var(--bg-color); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color); margin-bottom: 24px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+                <span style="display: inline-block; padding: 4px 12px; background: #eff6ff; color: #2563eb; font-size: 12px; font-weight: 700; border-radius: 20px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">Developed By</span>
+                <p style="font-size: 20px; font-weight: 800; margin-bottom: 6px; color: var(--text-color);">HABEEB RAHMAN</p>
+                <a href="https://www.bestfreelanceseo.com/?utm_source=google&utm_medium=referral&utm_campaign=chrome" target="_blank" style="color: #2563eb; font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                  Best Freelance SEO
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 14px; height: 14px;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                </a>
+              </div>
+
+              <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <a href="https://github.com/habeebrahmanb" target="_blank" class="social-btn" style="padding: 8px 16px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.2s;">GitHub</a>
+                <a href="https://www.linkedin.com/in/habeebrahmanb" target="_blank" class="social-btn" style="padding: 8px 16px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.2s;">LinkedIn</a>
+                <a href="https://www.facebook.com/habeebrahmanb" target="_blank" class="social-btn" style="padding: 8px 16px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.2s;">Facebook</a>
+                <a href="https://www.instagram.com/habeebrahmanb" target="_blank" class="social-btn" style="padding: 8px 16px; background: var(--bg-color); border: 1px solid var(--border-color); border-radius: 8px; color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 13px; transition: all 0.2s;">Instagram</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+  
+  <script src="utils/helpers.js"></script>
+  <script src="modules/seoAnalyzer.js"></script>
+  <script src="modules/imageAnalyzer.js"></script>
+  <script src="modules/linkAnalyzer.js"></script>
+  <script src="modules/keywordAnalyzer.js"></script>
+  <script src="modules/techDetector.js"></script>
+  <script src="modules/indexAnalyzer.js"></script>
+  <script src="modules/llmAnalyzer.js"></script>
+  <script src="modules/exportManager.js"></script>
+  <script src="utils/html2pdf.bundle.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
